@@ -45,17 +45,15 @@ public class MasterInstitute extends AbstractEntity implements Serializable {
 	private String name;
 
 	@ManyToOne
-	@Column(nullable = false)
 	private Contact contact;
 
 	@ManyToOne
-	@Column(nullable = false)
 	private Address address;
-	
+
 	@ManyToOne
-	@JoinColumn(referencedColumnName="code")
+	@JoinColumn(referencedColumnName = "code")
 	private Licence licenceCode;
-	
-	private Date licenceExpDate; 
+
+	private Date licenceExpDate;
 
 }

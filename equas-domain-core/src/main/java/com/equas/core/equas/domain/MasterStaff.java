@@ -66,14 +66,10 @@ public class MasterStaff extends AbstractEntity implements Serializable {
 
 	private String idValue;
 
-	private Byte[] idImage;
-
 	@ManyToOne
-	@Column(nullable = false)
 	private Contact contact;
 
 	@ManyToOne
-	@Column(nullable = false)
 	private Address address;
 
 }

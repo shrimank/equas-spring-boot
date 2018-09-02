@@ -34,7 +34,7 @@ public class MasterStudent extends AbstractEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "masterstudentseq_generator")
 	@SequenceGenerator(name = "masterstudentseq_generator", sequenceName = "masterstudent_seq", allocationSize = 1)
-	@Column(unique=true)
+	@Column(unique = true)
 	private Integer masterStudentId;
 
 	private String firstName;
@@ -48,21 +48,19 @@ public class MasterStudent extends AbstractEntity implements Serializable {
 	private String gaurdianMiddleName;
 
 	private String gaurdianLastName;
-	
+
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "code", nullable = false)
 	private MasterClass classOrGrade;
-	
+
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "code", nullable = false)
 	private MasterInstitute institute;
 
 	@ManyToOne
-	@Column(nullable = false)
 	private Contact contact;
 
 	@ManyToOne
-	@Column(nullable = false)
 	private Address address;
 
 }

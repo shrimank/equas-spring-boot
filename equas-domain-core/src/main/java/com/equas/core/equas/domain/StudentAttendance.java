@@ -33,8 +33,8 @@ public class StudentAttendance extends AbstractEntity implements Serializable {
 	private static final long serialVersionUID = 4123723228212612596L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "stdattendanceseq_generator")
-	@SequenceGenerator(name = "stdattendanceseq_generator", sequenceName = "stdattendance_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "stdattseq_generator")
+	@SequenceGenerator(name = "stdattseq_generator", sequenceName = "stdatt_seq", allocationSize = 1)
 	private Integer stdAttendanceId;
 
 	@ManyToOne
@@ -47,7 +47,7 @@ public class StudentAttendance extends AbstractEntity implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "code", nullable = false)
-	private MasterClass classOrGrade;
+	private MasterClass grade;
 
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "code", nullable = false)
@@ -55,15 +55,15 @@ public class StudentAttendance extends AbstractEntity implements Serializable {
 
 	private Date attendanceDate;
 
-	@Column(columnDefinition = "default 'false'")
+	@Column(columnDefinition = "default false")
 	private Boolean isPresent;
 
 	private String remark;
 
-	@Column(columnDefinition = "default 'false'")
+	@Column(columnDefinition = "default false")
 	private Boolean canSendSMS;
 
-	@Column(columnDefinition = "default 'false'")
+	@Column(columnDefinition = "default false")
 	private Boolean canSendEmail;
 
 }
